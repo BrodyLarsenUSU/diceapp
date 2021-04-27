@@ -6,31 +6,6 @@ import java.util.Random;
 
 public class DiceManager {
 
-    ObservableArrayList<Result> fourResults = new ObservableArrayList<>();
-    ObservableArrayList<Result> sixResults = new ObservableArrayList<>();
-
-    public void fourRoll() {
-        String roll = dFour();
-        Result result = new Result();
-        Result comma = new Result();
-        comma.number = ",  ";
-        result.number = roll;
-        fourResults.add(0, result);
-        fourResults.add(1, comma);
-    }
-
-    public void sixRoll(){
-        String roll = dSix();
-        Result result = new Result();
-        Result comma = new Result();
-        comma.number = ",  ";
-        result.number = roll;
-        sixResults.add(0, result);
-        sixResults.add(1, comma);
-        System.out.println(sixResults.size());
-        System.out.println(result.number);
-    }
-
     public String dFour(){
         Random roll = new Random();
         int result = roll.nextInt(4) + 1;

@@ -5,8 +5,6 @@ import androidx.databinding.ObservableArrayList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Random;
-
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -16,8 +14,6 @@ import android.hardware.SensorEventListener;
 
 import android.os.Bundle;
 import android.widget.Button;
-
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Creating recyclerViews for each die
         RecyclerView fourList = findViewById(R.id.resultsFourList);
         RecyclerView sixList = findViewById(R.id.resultsSixList);
         RecyclerView eightList = findViewById(R.id.resultsEightList);
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView twentyList = findViewById(R.id.resultsTwentyList);
         RecyclerView hundredList = findViewById(R.id.resultsHundredList);
 
+        //Creating layour managers for each recyclerView
         LinearLayoutManager layoutFourManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         fourList.setLayoutManager(layoutFourManager);
         LinearLayoutManager layoutSixManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -58,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutHundredManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         hundredList.setLayoutManager(layoutHundredManager);
 
-
-
+        //Creating Adapters for each recyclerView
         ResultsAdapter fourAdapter = new ResultsAdapter(
                 fourResults,
                 (result) -> {
@@ -116,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        fourList.setAdapter(fourAdapter); //look up recycler view in starter code modify it and pass that into this function); usu contacts has example of observable arraylist
+        //Setting Adapters for each recyclerView
+        fourList.setAdapter(fourAdapter);
         sixList.setAdapter(sixAdapter);
         eightList.setAdapter(eightAdapter);
         tenList.setAdapter(tenAdapter);
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         twentyList.setAdapter(twentyAdapter);
         hundredList.setAdapter(hundredAdapter);
 
-
+        //Creating buttons for each type of die
         Button four = findViewById(R.id.four);
         Button six = findViewById(R.id.six);
         Button eight = findViewById(R.id.eight);
@@ -133,11 +132,11 @@ public class MainActivity extends AppCompatActivity {
         Button twenty = findViewById(R.id.twenty);
         Button hundred = findViewById(R.id.hundred);
 
+        DiceManager dice = new DiceManager();
 
+        //Button logic
         four.setOnClickListener((view) -> {
-//            DiceManager fourq = new DiceManager();
-//            fourq.fourRoll();
-            String roll = dFour();
+            String roll = dice.dFour();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -148,9 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
         six.setOnClickListener((view) -> {
-//            DiceManager sixq = new DiceManager();
-//            sixq.sixRoll();
-            String roll = dSix();
+            String roll = dice.dSix();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -161,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
         eight.setOnClickListener((view) -> {
-            String roll = dEight();
+            String roll = dice.dEight();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -172,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ten.setOnClickListener((view) -> {
-            String roll = dTen();
+            String roll = dice.dTen();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             tenList.scrollToPosition(0);
         });
         twelve.setOnClickListener((view) -> {
-            String roll = dTwelve();
+            String roll = dice.dTwelve();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -192,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             twelveList.scrollToPosition(0);
         });
         twenty.setOnClickListener((view) -> {
-            String roll = dTwenty();
+            String roll = dice.dTwenty();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -202,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
             twentyList.scrollToPosition(0);
         });
         hundred.setOnClickListener((view) -> {
-            String roll = dHundred();
+            String roll = dice.dHundred();
             Result result = new Result();
             Result comma = new Result();
             comma.number = ",  ";
@@ -212,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
             hundredList.scrollToPosition(0);
         });
 
+        //Shake to roll code
         SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
@@ -222,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                         float x = sensorEvent.values[0];
                         float y = sensorEvent.values[1];
                         float z = sensorEvent.values[2];
-                        String roll = dTwenty();
+                        String roll = dice.dTwenty();
                         Result result = new Result();
                         Result comma = new Result();
 
@@ -257,56 +255,5 @@ public class MainActivity extends AppCompatActivity {
         );
 
     }
-
-    public String dFour(){
-        Random roll = new Random();
-        int result = roll.nextInt(4) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dSix(){
-        Random roll = new Random();
-        int result = roll.nextInt(6) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dEight(){
-        Random roll = new Random();
-        int result = roll.nextInt(8) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dTen(){
-        Random roll = new Random();
-        int result = roll.nextInt(10) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dTwelve(){
-        Random roll = new Random();
-        int result = roll.nextInt(12) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dTwenty(){
-        Random roll = new Random();
-        int result = roll.nextInt(20) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-    public String dHundred(){
-        Random roll = new Random();
-        int result = roll.nextInt(100) + 1;
-        String strResult = String.valueOf(result);
-        return strResult;
-    }
-
-
 }
 
