@@ -17,179 +17,163 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/four"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d4" />
+                android:text="1d4"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/resultsFourList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:id="@+id/resultFourList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/six"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d6" />
+                android:text="1d6"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsSixList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultSixList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/eight"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d8" />
+                android:text="1d8"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsEightList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultEightList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/ten"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d10" />
+                android:text="1d10"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsTenList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultTenList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/twelve"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d12" />
+                android:text="1d12"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsTwelveList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultTwelveList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/twenty"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d20" />
+                android:text="1d20"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsTwentyList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultTwentyList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/hundred"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1d100" />
+                android:text="1d100"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:backgroundTint="#0A3455" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsHundredList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1" />
 
-                <LinearLayout
-                    android:id="@+id/resultHundredList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" />
-            </HorizontalScrollView>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
