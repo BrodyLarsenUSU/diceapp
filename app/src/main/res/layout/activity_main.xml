@@ -1,182 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.usu.brodylarsendiceapp.MainActivity">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--            <com.google.android.material.appbar.AppBarLayout-->
+            <!--                android:id="@+id/appBarLayout"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="56dp">-->
+
+            <!--            </com.google.android.material.appbar.AppBarLayout>-->
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                app:navigationIcon="@drawable/ic_baseline_menu_24"
+                app:title="DiceApp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/four"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d4"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsFourList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/six"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d6"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsSixList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/eight"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d8"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsEightList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/ten"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d10"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsTenList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/twelve"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d12"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsTwelveList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/twenty"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d20"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsTwentyList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/hundred"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1d100"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    app:backgroundTint="#0A3455" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultsHundredList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="41dp"></LinearLayout>
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+
+            </com.google.android.gms.ads.AdView>
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_drawer"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_drawer">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
+    </com.google.android.material.navigation.NavigationView>
 
-            <Button
-                android:id="@+id/four"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d4"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsFourList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/six"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d6"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsSixList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/eight"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d8"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsEightList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/ten"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d10"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsTenList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/twelve"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d12"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsTwelveList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/twenty"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d20"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsTwentyList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/hundred"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1d100"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                app:backgroundTint="#0A3455" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsHundredList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+</androidx.drawerlayout.widget.DrawerLayout>
 
 

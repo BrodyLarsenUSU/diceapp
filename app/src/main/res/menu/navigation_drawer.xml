@@ -1,0 +1,32 @@
+<?xml version ="1.0" encoding ="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/shakefour"
+            android:title="Shake 1d4" />
+        <item
+            android:id="@+id/shakesix"
+            android:title="Shake 1d6" />
+        <item
+            android:id="@+id/shakeeight"
+            android:title="Shake 1d8" />
+        <item
+            android:id="@+id/shaketen"
+            android:title="Shake 1d10" />
+        <item
+            android:id="@+id/shaketwelve"
+            android:title="Shake 1d12" />
+        <item
+            android:id="@+id/shaketwenty"
+            android:title="Shake 1d20" />
+        <item
+            android:id="@+id/shakehundred"
+            android:title="Shake 1d100" />
+        <item />
+        <item
+            android:id="@+id/clear"
+            android:title="Clear Lists" />
+    </group>
+</menu>
